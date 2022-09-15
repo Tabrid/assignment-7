@@ -11,6 +11,28 @@ body {
   font-family: "Zilla Slab", serif;
 }
 
+.nav-menu {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.nav-btn {
+  position: absolute;
+  right: 15%;
+  text-decoration: none;
+  font-weight: bold;
+  width: 120px;
+  color: white;
+  text-align: center;
+  padding: 10px;
+  border-radius: 10px;
+  border: 2px solid #9dffad;
+  transform: translateY(-50%);
+  margin-top: 2.5%;
+}
+
+
 .box-container {
   width: 70%;
   margin: 0 auto;
@@ -25,11 +47,9 @@ body {
   font-size: 25px;
   border-radius: 15px;
   background: rgb(255, 255, 255);
-  background: linear-gradient(
-    92.49deg,
-    rgba(255, 255, 255, 0.1) 0.18%,
-    rgba(255, 255, 255, 0.05) 99.85%
-  );
+  background: linear-gradient(92.49deg,
+      rgba(255, 255, 255, 0.1) 0.18%,
+      rgba(255, 255, 255, 0.05) 99.85%);
   backdrop-filter: blur(5px);
   margin-bottom: 30px;
 }
@@ -61,10 +81,11 @@ body {
   color: white;
   display: none;
 }
+
 #result {
   position: fixed;
-  top: 10%; 
-  left: 10%;
+  top: 50%;
+  left: 50%;
   transform: translate(-50%, -50%);
   height: 250px;
   width: 400px;
@@ -75,7 +96,8 @@ body {
   text-align: center;
   padding: 2rem;
 }
-#show-time{
+
+#show-time {
   text-align: center;
   color: white;
   margin: 10px 0;
@@ -84,18 +106,23 @@ body {
 .green {
   color: #9dffad;
 }
+
 .red {
   color: #eb6565;
 }
+
 .bold {
   font-weight: 700;
 }
+
 .inactive {
   border: 2px solid white !important;
 }
+
 .hidden {
   display: none;
 }
+
 .title {
   text-align: center;
   color: white;
@@ -127,6 +154,7 @@ body {
   justify-content: center;
   margin: 30px 0;
 }
+
 button {
   padding: 10px 20px;
   border: none;
@@ -142,9 +170,11 @@ button {
 }
 
 #histories {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  column-gap: 15px;
+  row-gap: 15px;
+  margin-bottom: 30px;
 }
 
 .card {
@@ -158,22 +188,18 @@ button {
   color: white;
   border-radius: 15px;
   background: rgb(255, 255, 255);
-  background: linear-gradient(
-    92.49deg,
-    rgba(255, 255, 255, 0.1) 0.18%,
-    rgba(255, 255, 255, 0.05) 99.85%
-  );
+  background: linear-gradient(92.49deg,
+      rgba(255, 255, 255, 0.1) 0.18%,
+      rgba(255, 255, 255, 0.05) 99.85%);
   backdrop-filter: blur(5px);
   margin-bottom: 30px;
 }
 
 #modal-background {
   background: rgb(255, 255, 255);
-  background: linear-gradient(
-    92.49deg,
-    rgba(255, 255, 255, 0.1) 0.18%,
-    rgba(255, 255, 255, 0.05) 99.85%
-  );
+  background: linear-gradient(92.49deg,
+      rgba(255, 255, 255, 0.1) 0.18%,
+      rgba(255, 255, 255, 0.05) 99.85%);
   backdrop-filter: blur(5px);
   height: 100vh;
   width: 100%;
@@ -181,11 +207,32 @@ button {
   top: 0;
 }
 
+.card {
+  flex-direction: column;
+}
+
 @media only screen and (max-width: 700px) {
   .box-container {
     padding: 0 20px;
     width: 100%;
   }
+
+  .nav-menu {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .nav-btn {
+    position: inherit;
+    width: 220px;
+  }
+
+  #histories {
+    display: flex;
+    flex-wrap: wrap;
+
+  }
+
   .card {
     flex-direction: column;
   }
